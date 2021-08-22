@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Single</title>
+</head>
+<body>
+<a href="/">Home</a><br>
+<table bgcolor="#696969" border="3px">
+    <tr>
+        <th>Company Id</th>
+        <th>Company Name</th>
+        <th>Company Size</th>
+        <th>Company Address</th>
+    </tr>
+    <tr>
+        <td th:text="${singleCompany.getId()}"></td>
+        <td th:text="${singleCompany.getName()}"></td>
+        <td th:text="${singleCompany.getSize()}"></td>
+        <td th:text="${singleCompany.getAddress()}"></td>
+    </tr>
+</table>
+<td><a th:href="@{/singleCompany/{id}(id=${singleCompany.getId()})}" href="#"><span>Delete Company</span></a>
+</body>
+</html>

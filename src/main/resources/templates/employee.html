@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+</head>
+<body>
+<a href="/">Home</a><br>
+<a href="/employee/add">Add Employee</a><br>
+<table bgcolor="#696969" border="3px">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Salary</th>
+        <th>Position</th>
+        <th>Company Name</th>
+    </tr>
+    <tr th:each="allEmpoyee:${employee}">
+        <td th:text="${allEmpoyee.getId()}"></td>
+        <td><a th:href="@{/employee/{id}(id=${allEmpoyee.getId()})}"
+            href="#"><span th:text="${allEmpoyee.getName()}"></span></a></td>
+<!--        <td th:text="${allEmpoyee.getName()}"></td>-->
+        <td th:text="${allEmpoyee.getSurname()}"></td>
+        <td th:text="${allEmpoyee.getEmail()}"></td>
+        <td th:text="${allEmpoyee.getPhoneNumber()}"></td>
+        <td th:text="${allEmpoyee.getSalary()}"></td>
+        <td th:text="${allEmpoyee.getPosition()}"></td>
+        <!--        <td th:text="${allEmpoyee.getPosition()}"></td>-->
+        <!--        <span th:text="${System.out.println('html '+allEmpoyee.getCompany().getName())}"></span>-->
+        <td th:text="${allEmpoyee.getCompany().getName()}"></td>
+
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+</head>
+<body>
+<a href="/">Home</a><br>
+<table bgcolor="#696969" border="3px">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Surname</th>
+        <th>Employee Email</th>
+        <th>Employee Phone Number</th>
+        <th>Employee Salary</th>
+        <th>Employee Position</th>
+        <th>Company Name</th>
+    </tr>
+    <tr>
+        <td th:text="${singleEmployee.getId()}"></td>
+        <td th:text="${singleEmployee.getName()}"></td>
+        <td th:text="${singleEmployee.getSurname()}"></td>
+        <td th:text="${singleEmployee.getEmail()}"></td>
+        <td th:text="${singleEmployee.getPhoneNumber()}"></td>
+        <td th:text="${singleEmployee.getSalary()}"></td>
+        <td th:text="${singleEmployee.getPosition()}"></td>
+        <td th:text="${singleEmployee.getCompany().getName()}"></td>
+
+    </tr>
+</table>
+<td><a th:href="@{/singleEmployee/{id}(id=${singleEmployee.getId()})}" href="#"><span>Delete Employee</span></a>
+
+</body>
+</html>
